@@ -1,5 +1,10 @@
+/* .jumbotron {
+    background-image: url("/assets/images/mood.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+} */
+
 body {
-	/* background: url('https://cdn.pixabay.com/photo/2017/05/01/03/10/black-and-white-2274601_960_720.jpg')no-repeat center center fixed;  */
     background-size: cover;
     color: white;
     height: 100%;
