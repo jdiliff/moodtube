@@ -1,17 +1,25 @@
-/* .jumbotron {
-    background-image: url("/assets/images/mood.png");
-    background-size: cover;
+.jumbotron {
+    background-image: url("../images/mood.png");
+    background-size: contain;
     background-repeat: no-repeat;
-} */
-
+    background-position: relative;
+    background-position-x: 600px;
+    background-color: rgb(6, 5, 12, 0.3);
+    min-height: 500px;
+}
 body {
     background-size: cover;
     color: white;
     height: 100%;
-    margin-left: 25%;
-    margin-right: 25%;
+    /* margin-left: 25%;
+    margin-right: 25%; */
 }
 
+#InputImg {
+    height: 400px;
+    width: 500px;
+ }
+ 
 @keyframes bgcolor {
     0% {
         background-color: #45a3e5
