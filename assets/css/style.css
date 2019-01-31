@@ -48,3 +48,10 @@ body {
     -webkit-animation-direction: alternate;
     animation-direction: alternate;
 }
+
+#search-btn, #opp-search-btn {
+    font-size: 25px; 
+    margin: 10px; 
+    padding: 10px; 
+}
+
