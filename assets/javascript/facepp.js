@@ -72,6 +72,16 @@ function analyzeImg() {
             $('#gender').text(faceAttributes.gender);
             $('#age').text(faceAttributes.age);
             $('#emotion').text(faceAttributes.bestEmotion);
+
+
+            
         }
+
+        
     })
+
+    
 }
+
+
+
