@@ -5,7 +5,7 @@
     background-position: relative;
     background-position-x: 600px;
     background-color: rgb(6, 5, 12, 0.3);
-    min-height: 500px;
+    min-height: 400px;
 }
 body {
     background-size: cover;
@@ -14,7 +14,18 @@ body {
     /* margin-left: 25%;
     margin-right: 25%; */
 }
-
+/* custom label for styling "get a pic" button */
+input[type="file"] {
+    display: none;
+}
+.custom-file-upload {
+    border: 1px solid #ccc;
+    display: inline-block;
+    background-image:linear-gradient(to bottom, rgb(125,126,125) 0%,rgb(14,14,14) 100%);
+    padding: 6px 12px;
+    cursor: pointer;
+    border-radius: 25px;
+}
 .frame {
     background-image: url(../images/frame.png);
     background-repeat: no-repeat;
@@ -25,6 +36,8 @@ body {
     top: 0;
     left: 0;
     padding-top: 100px;
+    margin-left: auto;
+    margin-right: auto;
 }
 #InputImg {
     height: 400px;
@@ -33,6 +46,8 @@ body {
     margin: 0 auto;
     /* margin-top: 50px; */
     display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
  
 @keyframes bgcolor {
