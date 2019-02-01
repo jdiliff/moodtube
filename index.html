@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
         crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/loading.css">
 
     
     <script src="assets/javascript/script.js"></script>
@@ -37,6 +38,35 @@
             <input type="file" id="testImg" onchange="detectImg()">
         </form>
         <p>...that face looks like ... <span id="emotion"></span></p>
+        <div class="start-screen hidden loadingText">
+
+            <div class="loading">
+              <div class="loading__element el1">R</div>
+              <div class="loading__element el2">E</div>
+              <div class="loading__element el3">A</div>
+              <div class="loading__element el4">D</div>
+              <div class="loading__element el5">I</div>
+              <div class="loading__element el6">N</div>
+              <div class="loading__element el7">G</div>
+            </div>
+            
+              <div class="loading">
+              <div class="loading__element el1">Y</div>
+              <div class="loading__element el2">O</div>
+              <div class="loading__element el3">U</div>
+              <div class="loading__element el4">R</div>
+            </div>
+            
+              <div class="loading">
+              <div class="loading__element el1">F</div>
+              <div class="loading__element el2">A</div>
+              <div class="loading__element el3">C</div>
+              <div class="loading__element el4">E</div>
+             
+             
+            </div>
+            
+          </div>
     </div>
 
     <div class="container">
@@ -52,7 +82,7 @@
         <button id="opp-search-btn" type="button" class="btn btn-outline-dark">Change My Mood</button>
 
 
-        <iframe class="iframe1 img-responseive" width="800" height="475" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        <iframe class="iframe1 img-responsive" width="800" height="475" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen></iframe>
         <iframe class="iframe2" width="800" height="475" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen></iframe>   
@@ -69,7 +99,7 @@
         <iframe class="iframe8" width="800" height="475" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen></iframe>
         
-        <div class="vid-stying"></div>
+        <div class="vid-styling"></div>
     <!-- </div>
     <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
         <ol class="carousel-indicators">
