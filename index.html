@@ -10,9 +10,13 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
         crossorigin="anonymous">
     <link rel="stylesheet" type="text/css" media="screen" href="assets/css/style.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="assets/css/loading.css">
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    
     <script src="assets/javascript/script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 </head>
 
 <body>
@@ -33,24 +37,96 @@
             </label>
             <input type="file" id="testImg" onchange="detectImg()">
         </form>
-    </div>
+        <div class="container">
+                <div class="frame">
+                    <img id="inputImg" src="https://scstylecaster.files.wordpress.com/2016/12/model-curly-hair-nose-ring.jpg" , alt="your image">
+                </div>
+        </div>
+        <p>...that face looks like ... <span id="emotion"></span></p>
+        <br>
+        <div class="start-screen hidden loadingText">
 
-    <div class="container">
-            <div class="frame">
-            <img id="inputImg" src="https://scstylecaster.files.wordpress.com/2016/12/model-curly-hair-nose-ring.jpg" , alt="your image">
+            <div class="loading">
+              <div class="loading__element el1">R</div>
+              <div class="loading__element el2">E</div>
+              <div class="loading__element el3">A</div>
+              <div class="loading__element el4">D</div>
+              <div class="loading__element el5">I</div>
+              <div class="loading__element el6">N</div>
+              <div class="loading__element el7">G</div>
             </div>
+            
+              <div class="loading">
+              <div class="loading__element el1">Y</div>
+              <div class="loading__element el2">O</div>
+              <div class="loading__element el3">U</div>
+              <div class="loading__element el4">R</div>
+            </div>
+            
+              <div class="loading">
+              <div class="loading__element el1">F</div>
+              <div class="loading__element el2">A</div>
+              <div class="loading__element el3">C</div>
+              <div class="loading__element el4">E</div>
+             
+             
+            </div>
+            
+          </div>
+    </div>
 
     <!-- YOUTUBE API SEARCH -->
     <div class="container">
-        <input id="query" value='emotions' type="text" />
-        <button id="search-btn">Search</button>
-        <pre id="response"></pre>
 
-        <iframe class="iframe1" width="560" height="315" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        <button id="search-btn" type="button" class="btn btn-outline-dark">Match My Mood</button>        
+        <button id="opp-search-btn" type="button" class="btn btn-outline-dark">Change My Mood</button>
+
+
+        <iframe class="iframe1 img-responsive" width="800" height="475" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen></iframe>
-        <iframe class="iframe2" width="560" height="315" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        <iframe class="iframe2" width="800" height="475" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>   
+        <iframe class="iframe3" width="800" height="475" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen></iframe>
-    </div>
+        <iframe class="iframe4" width="800" height="475" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        <iframe class="iframe5" width="800" height="475" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        <iframe class="iframe6" width="800" height="475" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>   
+        <iframe class="iframe7" width="800" height="475" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        <iframe class="iframe8" width="800" height="475" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>
+        
+        <div class="vid-styling"></div>
+    <!-- </div>
+    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+        </ol> -->
+        <!-- <div class="carousel-inner">
+          <div class="carousel-item active">
+            <iframe class="iframe1" width="800" height="400" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>         </div>
+          <div class="carousel-item">
+            <iframe class="iframe2 d-block w-100" width="800" height="400" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>         </div> -->  
+          <!-- <div class="carousel-item">
+            <iframe class="iframe4 d-block w-100" width="800" height="400" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+            allowfullscreen></iframe>          </div> --> 
+        <!-- </div>
+        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="sr-only">Previous</span>
+        </a>
+        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="sr-only">Next</span> -->
+        <!-- </a>  
+      </div> -->
 
 
     <script src="assets/javascript/youTubeApi.js"></script>
