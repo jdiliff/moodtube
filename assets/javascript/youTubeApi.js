@@ -1,14 +1,21 @@
+//PULL THE CANDIDATE EMOTIONS OUT OF THE FACEPP FUNTION SO I CAN USE THEM TO CREATE IF THEN STATEMENTS
+//CREATE ONLICK FOR THE CHANGE MY MOOD AND ONE FOR THE MATCH MY MOOD
+//INSIDE THE CHANGE MY MOOD SET THE QUERY TO PULL MOOD ALTERING PLAYLISTS
+//INSDIE THE MATCH MY MOOD SET THE QUERY TO PULL FITTING PLAYLISTS
 
-var apiKey = "https://www.googleapis.com/youtube/v3/search?maxResults=25&part=snippet&q=${movieTitle}&key=AIzaSyB8LA4BQojhhjwpGFhSFEYQrJHdC1PXiYI"
+var apiKey = "https://www.googleapis.com/youtube/v3/search?maxResults=25&part=snippet&q=${moodPlaylist}playlist&key=AIzaSyB8LA4BQojhhjwpGFhSFEYQrJHdC1PXiYI"
 
+// if (candidateEmotion === neutral) {
+//     moodPlaylist === "mellow"
+// }
 
-
+let moodPlaylist = "mellow"
 $('#search-btn').on('click', function (e) {
-    var movieTitle = $('#query').val();
+    var moodPlaylist = $('#query');
     e.preventDefault();
-    console.log(movieTitle);
+    console.log(moodPlaylist);
 
-    getYoutubeTrailer(movieTitle);
+    getYoutubeTrailer(moodPlaylist);
     console.log(response.items)
 
 })
@@ -16,9 +23,9 @@ $('#search-btn').on('click', function (e) {
 
 
 //following are for youtube movie trailers
-function getYoutubeTrailer(movieTitle) {
-   if (movieTitle !== undefined) {
-   $.get(`https://www.googleapis.com/youtube/v3/search?maxResults=25&part=snippet&q=${movieTitle}&key=AIzaSyB8LA4BQojhhjwpGFhSFEYQrJHdC1PXiYI`,
+function getYoutubeTrailer(moodPlaylist) {
+   if (moodPlaylist !== undefined) {
+   $.get(`https://www.googleapis.com/youtube/v3/search?maxResults=25&part=snippet&q=${moodPlaylist}playlist&key=AIzaSyB8LA4BQojhhjwpGFhSFEYQrJHdC1PXiYI`,
    function(response) {
        console.log(response.items)
        var idArray = []
@@ -30,6 +37,8 @@ function getYoutubeTrailer(movieTitle) {
            return youtubeArray.map(function(cur, index) {
                console.log(index);
             $(`.iframe${index}`).attr('src', `https://www.youtube.com/embed/${cur}`)
+    
+            $(`.iframe${index}`).attr('class', `card-header`)
         });
    }         printVids(idArray);
 });

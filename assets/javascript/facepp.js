@@ -5,6 +5,7 @@ let faceConfig = {
 let faceAttributes = {};
 
 function detectImg() {
+    document.getElementsByClassName('loadingText')[0].classList.remove("hidden")
     var r = new FileReader();
     f = document.getElementById('testImg').files[0];
     r.readAsDataURL(f);
@@ -48,6 +49,7 @@ function getBestEmotion(emotionDict) {
 }
 
 function analyzeImg() {
+    // document.getElementsByClassName('loadingText')[0].classList.add("hidden")
     let url = 'https://api-cn.faceplusplus.com/facepp/v3/face/analyze';
     $.ajax({
         url: url,
@@ -59,6 +61,7 @@ function analyzeImg() {
             return_attributes: "gender,age,emotion"
         },
         success(data) {
+            document.getElementsByClassName('loadingText')[0].classList.add("hidden")
             console.log(data);
             emotion = data.faces[0].attributes.emotion; // use only the first face, for now
             bestEmotion = getBestEmotion(emotion);
@@ -72,6 +75,16 @@ function analyzeImg() {
             $('#gender').text(faceAttributes.gender);
             $('#age').text(faceAttributes.age);
             $('#emotion').text(faceAttributes.bestEmotion);
+
+
+            
         }
+
+        
     })
+
+    
 }
+
+
+
