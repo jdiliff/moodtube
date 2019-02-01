@@ -27,7 +27,7 @@ input[type="file"] {
     border-radius: 25px;
 }
 .frame {
-    background-image: url(../images/frame.png);
+    background-image: url(../images/newFrame.png);
     background-repeat: no-repeat;
     background-size: 100% 100%;
     height: 618px;
