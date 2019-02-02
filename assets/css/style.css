@@ -1,5 +1,5 @@
 .jumbotron {
-    background-image: url("../images/mood.png");
+    background-image: url("../images/mood2.png");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: relative;
@@ -19,6 +19,11 @@ body {
     background-size: cover;
     background-repeat: no-repeat;
 }
+
+*{
+    font-family: 'Cinzel Decorative', cursive;
+    }
+    
 /* custom label for styling "get a pic" button */
 input[type="file"] {
     display: none;
