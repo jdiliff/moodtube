@@ -3,7 +3,7 @@
 //INSIDE THE CHANGE MY MOOD SET THE QUERY TO PULL MOOD ALTERING PLAYLISTS
 //INSDIE THE MATCH MY MOOD SET THE QUERY TO PULL FITTING PLAYLISTS
 
-var apiKey = "https://www.googleapis.com/youtube/v3/search?maxResults=25&part=snippet&q=${moodPlaylist}playlist&key=AIzaSyB8LA4BQojhhjwpGFhSFEYQrJHdC1PXiYI"
+var apiKey = "https://www.googleapis.com/youtube/v3/search?maxResults=25&part=snippet&q=${moodPlaylist}song&key=AIzaSyB8LA4BQojhhjwpGFhSFEYQrJHdC1PXiYI"
 
 // if (candidateEmotion === neutral) {
 //     moodPlaylist === "mellow"
@@ -11,7 +11,7 @@ var apiKey = "https://www.googleapis.com/youtube/v3/search?maxResults=25&part=sn
 
 let moodPlaylist = "mellow"
 $('#search-btn').on('click', function (e) {
-    var moodPlaylist = $('#query');
+    var moodPlaylist = $('#emotion').text();
     e.preventDefault();
     console.log(moodPlaylist);
 
@@ -25,7 +25,7 @@ $('#search-btn').on('click', function (e) {
 //following are for youtube movie trailers
 function getYoutubeTrailer(moodPlaylist) {
    if (moodPlaylist !== undefined) {
-   $.get(`https://www.googleapis.com/youtube/v3/search?maxResults=25&part=snippet&q=${moodPlaylist}playlist&key=AIzaSyB8LA4BQojhhjwpGFhSFEYQrJHdC1PXiYI`,
+   $.get(`https://www.googleapis.com/youtube/v3/search?maxResults=25&part=snippet&q=${moodPlaylist}song&key=AIzaSyB8LA4BQojhhjwpGFhSFEYQrJHdC1PXiYI`,
    function(response) {
        console.log(response.items)
        var idArray = []

@@ -5,6 +5,7 @@ let faceConfig = {
 let faceAttributes = {};
 
 function detectImg() {
+    $('#emotion').text("");
     document.getElementsByClassName('loadingText')[0].classList.remove("hidden")
     var r = new FileReader();
     f = document.getElementById('testImg').files[0];
@@ -85,6 +86,81 @@ function analyzeImg() {
     })
 
     
+}
+
+
+/////////////////////////////////////
+// use the camera
+// grab html elements
+const video = document.querySelector('video');
+const startCamButton = document.querySelector('#btn-startCam');
+const takeSnapButton = document.querySelector('#btn-takeSnap');
+const hiddenCanvas = document.querySelector('canvas');
+const snapshotImg = document.querySelector('#inputImg');
+
+// device feature detection
+function hasGetUserMedia() {
+    return !!(navigator.mediaDevices &&
+        navigator.mediaDevices.getUserMedia);
+}
+
+// TODO: check if access is already granted
+
+// use only video
+const constraints = {
+    video: true
+};
+
+// start streaming camera
+startCamButton.onclick = function () {
+    event.preventDefault();
+    if (hasGetUserMedia()) {
+        // Good to go!
+        console.log("Great, getUserMedia() is supported");
+    } else {
+        console.error('Error: getUserMedia() is not supported by your browser');
+    }
+    
+    // get video stream and deal with it
+    navigator.mediaDevices.getUserMedia(constraints).
+        then(handleSuccess).catch(handleError);
+
+    // function to handle video stream
+    function handleSuccess(stream) {
+        takeSnapButton.disabled = false;
+        video.srcObject = stream;
+        video.style.display = 'block';
+        // disable start camera button
+        startCamButton.disabled = true;
+        // make sure the snapshot img tag is hidden;
+        snapshotImg.style.display = "none";
+    }
+    // handle errors
+    function handleError(error) {
+        console.error('Error: cannot start video stream. getUserMedia() failed ', error);
+    }
+}
+
+takeSnapButton.onclick = video.onclick = function () {
+    event.preventDefault();
+    // Setup a canvas with the same dimensions as the video.
+    hiddenCanvas.width = video.videoWidth;
+    hiddenCanvas.height = video.videoHeight;
+    // Make a copy of the current frame in the video on the canvas.
+    hiddenCanvas.getContext('2d').drawImage(video, 0, 0);
+    // Turn the canvas image into a dataURL that can be used as a src for our photo.
+    // Other browsers will fall back to image/png
+    snapshotImg.src = hiddenCanvas.toDataURL('image/webp');
+    // Pause video playback of stream.
+    video.pause();
+    // disable snapshot button
+    takeSnapButton.disabled = true;
+    // hide video tag, since the video has been paused.
+    video.style.display = 'none';
+    // show image
+    snapshotImg.style.display = "block";
+    // enable start camera button
+    startCamButton.disabled = false;
 }
 
 
