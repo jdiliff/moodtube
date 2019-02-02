@@ -30,17 +30,22 @@
     </div>
 
 <!-- The Button and Hidden Form for the emotion test -->
-    <div class="container">
+    <div class="container text-center">
         <form enctype="multipart/form-data">
             <label for="testImg" class="btn btn-outline-light" id="getEmotionButton">
-                <i class="fa fa-cloud-upload"></i> What Mood You In?
+                <i class="fa fa-cloud-upload"></i> Upload Photo
             </label>
             <input type="file" id="testImg" onchange="detectImg()">
+            <button id="btn-startCam" class="btn btn-outline-light">Start Camera</button>
+            <button id="btn-takeSnap" class="btn btn-outline-light" disabled>Take Snapshot</button>
         </form>
-        <div class="container">
-            <div class="frame">
-                <img id="inputImg" src="https://scstylecaster.files.wordpress.com/2016/12/model-curly-hair-nose-ring.jpg" , alt="your image">
-            </div>
+        <div id="snapApp" class="frame container">
+            
+            <video id="camStream" autoplay></video>
+            <!-- <img id="snapshotImg" src=""> -->
+            <img id="inputImg" src="https://scstylecaster.files.wordpress.com/2016/12/model-curly-hair-nose-ring.jpg" , alt="your image">
+            <!-- Hidden canvas element. Used for taking snapshot of video. -->
+            <canvas style="display:none;"></canvas>
         </div>
         <p class="faceLooksLike">...that face looks like ... <span id="emotion"></span></p>
         <div class="start-screen hidden loadingText">
