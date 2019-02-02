@@ -32,20 +32,17 @@
 <!-- The Button and Hidden Form for the emotion test -->
     <div class="container">
         <form enctype="multipart/form-data">
-            <label for="testImg" class="custom-file-upload">
+            <label for="testImg" class="btn btn-outline-light" id="getEmotionButton">
                 <i class="fa fa-cloud-upload"></i> What Mood You In?
             </label>
             <input type="file" id="testImg" onchange="detectImg()">
         </form>
-
-        <!-- The Photo Frame w/ Photo -->
         <div class="container">
-                <div class="frame">
-                    <img id="inputImg" src="https://scstylecaster.files.wordpress.com/2016/12/model-curly-hair-nose-ring.jpg" , alt="your image">
-                </div>
-       
-
-        <p>...that face looks like ... <span id="emotion"></span></p>
+            <div class="frame">
+                <img id="inputImg" src="https://scstylecaster.files.wordpress.com/2016/12/model-curly-hair-nose-ring.jpg" , alt="your image">
+            </div>
+        </div>
+        <p class="faceLooksLike">...that face looks like ... <span id="emotion"></span></p>
         <div class="start-screen hidden loadingText">
 
             <div class="loading">
@@ -77,18 +74,13 @@
           </div>
     </div>
 
-    <div class="container">
-        <div class="frame">
-            <img id="inputImg" src="https://scstylecaster.files.wordpress.com/2016/12/model-curly-hair-nose-ring.jpg" , alt="your image">
-        </div>
-
-    </div>
+    
 
     <!-- YOUTUBE API SEARCH -->
     <div class="container">
 
-        <button id="search-btn" type="button" class="btn btn-outline-dark">Match My Mood</button>        
-        <button id="opp-search-btn" type="button" class="btn btn-outline-dark">Change My Mood</button>
+        <button id="search-btn" type="button" class="btn btn-outline-light">Match My Mood</button>        
+        <button id="opp-search-btn" type="button" class="btn btn-outline-light">Change My Mood</button>
 
 
         <iframe class="iframe1 img-responsive" width="800" height="475" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
