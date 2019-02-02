@@ -150,7 +150,7 @@ takeSnapButton.onclick = video.onclick = function () {
     hiddenCanvas.getContext('2d').drawImage(video, 0, 0);
     // Turn the canvas image into a dataURL that can be used as a src for our photo.
     // Other browsers will fall back to image/png
-    snapshotImg.src = hiddenCanvas.toDataURL('image/webp');
+    snapshotImg.src = hiddenCanvas.toDataURL('image/png');
     // Pause video playback of stream.
     video.pause();
     // disable snapshot button
@@ -161,6 +161,26 @@ takeSnapButton.onclick = video.onclick = function () {
     snapshotImg.style.display = "block";
     // enable start camera button
     startCamButton.disabled = false;
+
+
+    document.getElementsByClassName('loadingText')[0].classList.remove("hidden")
+    let url = 'https://api-cn.faceplusplus.com/facepp/v3/detect';
+    let data = new FormData();
+    data.append('api_key', "ri01AlUOp4DUzMzMYCjERVeRw88hlvCa");
+    data.append('api_secret', "pF3JOAxBENEYXV-Q96A3s-CkyWqBg49u");
+    data.append('image_base64', snapshotImg.src);
+    $.ajax({
+        url: url,
+        type: 'POST',
+        data: data,
+        cache: false,
+        processData: false,
+        contentType: false,
+        success(data) {
+            faceConfig.face_token = data.faces[0].face_token;
+            analyzeImg(); //call teh image analyzer function
+        }
+    })
 }
 
 
