@@ -10,8 +10,9 @@ const apiKey = "https://www.googleapis.com/youtube/v3/search?maxResults=25&part=
 
 
 $('#search-btn').on('click', function (e) {
-    let moodPlaylist = $('#emotion');
+    let moodPlaylist = $('#emotion').text(); 
     e.preventDefault();
+    console.log(moodPlaylist); 
     // console.log(moodPlaylist);
 
     getYoutubeTrailer(moodPlaylist);

@@ -3,7 +3,7 @@
     background-position: relative;
     background-position-x: 600px;
     background-color: rgb(6, 5, 12, 0.5);
-    min-height: 400px;
+    min-height: 500px;
     color: white;
     border: white solid 2px;
 }
@@ -118,11 +118,10 @@ body {
 
 .instructions {
     font-family: Anton; 
-    background-color: #333333;
-    color: lightgray; 
+    color: #333333; 
     font-size: 30px; 
     text-align: center; 
-    border-radius: 20px; 
+    border-radius: 10px; 
     padding: 10px; 
 
 }
