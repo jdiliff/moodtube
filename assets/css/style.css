@@ -1,18 +1,20 @@
 .jumbotron {
     background-size: contain;
     background-position: relative;
-    background-position-x: 600px;
+    background-position-x: center;
     background-color: rgb(6, 5, 12, 0.5);
     min-height: 500px;
     color: white;
     border: white solid 2px;
 }
 body {
-    background-size: cover;
+    /* background-size: cover; */
     color: white;
     height: 100%;
-    /* margin-left: 25%;
-    margin-right: 25%; */
+    width: 100%;
+    background-image: url("../images/htmlSides.png");
+    background-size: cover;
+    background-repeat: no-repeat;
 }
 /* custom label for styling "get a pic" button */
 input[type="file"] {

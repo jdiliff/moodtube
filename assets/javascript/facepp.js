@@ -11,6 +11,7 @@ function detectImg() {
     r.readAsDataURL(f);
     r.onload = function (e) {
         document.getElementById('inputImg').src = this.result;
+        document.getElementById('emotion').textContent= "";
     }
     let url = 'https://api-cn.faceplusplus.com/facepp/v3/detect';
     let files = $('#testImg').prop('files');
