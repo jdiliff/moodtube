@@ -75,8 +75,15 @@
 
     
 
-
+<!-- The Button and Hidden Form for the emotion test -->
     <div class="container">
+        <form enctype="multipart/form-data">
+            <label for="testImg" class="btn btn-outline-light" id="getEmotionButton">
+                <i class="fa fa-cloud-upload"></i> What Mood You In?
+            </label>
+            <input type="file" id="testImg" onchange="detectImg()">
+        </form>
+        <div class="container">
             <div class="frame">
                 <img id="inputImg" src="https://scstylecaster.files.wordpress.com/2016/12/model-curly-hair-nose-ring.jpg" , alt="your image">
             </div>
