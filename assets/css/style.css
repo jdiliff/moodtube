@@ -24,6 +24,10 @@ input[type="file"] {
     display: none;
 }
 
+.hidden {
+    display: none;
+}
+
 /* .container {
     background-image: url("../images/htmlSides.png");
     background-size: contain;
@@ -105,6 +109,7 @@ body {
 
 .loading {
     color: white;
+    display: none;
 }
 
 #snapApp {
