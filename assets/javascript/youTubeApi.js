@@ -2,21 +2,20 @@
 //CREATE ONLICK FOR THE CHANGE MY MOOD AND ONE FOR THE MATCH MY MOOD
 //INSIDE THE CHANGE MY MOOD SET THE QUERY TO PULL MOOD ALTERING PLAYLISTS
 //INSDIE THE MATCH MY MOOD SET THE QUERY TO PULL FITTING PLAYLISTS
-
-var apiKey = "https://www.googleapis.com/youtube/v3/search?maxResults=25&part=snippet&q=${moodPlaylist}playlist&key=AIzaSyB8LA4BQojhhjwpGFhSFEYQrJHdC1PXiYI"
+const apiKey = "https://www.googleapis.com/youtube/v3/search?maxResults=25&part=snippet&q=${moodPlaylist}song&key=AIzaSyB8LA4BQojhhjwpGFhSFEYQrJHdC1PXiYI"
 
 // if (candidateEmotion === neutral) {
 //     moodPlaylist === "mellow"
 // }
 
-let moodPlaylist = "mellow"
+
 $('#search-btn').on('click', function (e) {
-    var moodPlaylist = $('#query');
+    let moodPlaylist = $('#emotion');
     e.preventDefault();
-    console.log(moodPlaylist);
+    // console.log(moodPlaylist);
 
     getYoutubeTrailer(moodPlaylist);
-    console.log(response.items)
+    // console.log(response.items)
 
 })
 
@@ -25,17 +24,16 @@ $('#search-btn').on('click', function (e) {
 //following are for youtube movie trailers
 function getYoutubeTrailer(moodPlaylist) {
    if (moodPlaylist !== undefined) {
-   $.get(`https://www.googleapis.com/youtube/v3/search?maxResults=25&part=snippet&q=${moodPlaylist}playlist&key=AIzaSyB8LA4BQojhhjwpGFhSFEYQrJHdC1PXiYI`,
+   $.get(`https://www.googleapis.com/youtube/v3/search?maxResults=25&part=snippet&q=${moodPlaylist}song&key=AIzaSyB8LA4BQojhhjwpGFhSFEYQrJHdC1PXiYI`,
    function(response) {
-       console.log(response.items)
-       var idArray = []
+    //    console.log(response.items)
+       let idArray = []
        response.items.forEach(function(cur) {
            idArray.push(cur.id.videoId);
        });
        function printVids(youtubeArray){
-           console.log('akuna');
            return youtubeArray.map(function(cur, index) {
-               console.log(index);
+            //    console.log(index);
             $(`.iframe${index}`).attr('src', `https://www.youtube.com/embed/${cur}`)
     
             $(`.iframe${index}`).attr('class', `card-header`)
