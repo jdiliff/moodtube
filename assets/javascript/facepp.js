@@ -117,6 +117,7 @@ startCamButton.onclick = function () {
     if (hasGetUserMedia()) {
         // Good to go!
         console.log("Great, getUserMedia() is supported");
+        $('#emotion').empty() 
     } else {
         console.error('Error: getUserMedia() is not supported by your browser');
     }
