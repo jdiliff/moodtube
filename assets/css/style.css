@@ -23,6 +23,22 @@ body {
 *{
     font-family: 'Cinzel Decorative', cursive;
     }
+
+.container {
+    text-align: center
+}
+
+.logo {
+    text-align: center;
+}
+
+.lead {
+    color: white;
+}
+
+.upload {
+    color: white;
+}
     
 /* custom label for styling "get a pic" button */
 input[type="file"] {
