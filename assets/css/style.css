@@ -3,8 +3,7 @@
     padding: 0;
     border: 0;
     box-sizing: border-box;
-    font-family: 'Cinzel Decorative', cursive;
-  
+    font-family: 'Cinzel Decorative', cursive;  
 }
 
 *:before, *:after {
@@ -49,6 +48,11 @@ body {
     text-align: center;
     height: 300px;
     width: 100%;
+}
+
+#searchResults {
+    padding-top: 20px;
+    padding-bottom: 25px
 }
 
 .lead {

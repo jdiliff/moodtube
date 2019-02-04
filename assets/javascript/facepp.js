@@ -5,6 +5,8 @@ let faceConfig = {
 let faceAttributes = {};
 
 function detectImg() {
+    var resultDiv = $("#searchResults");
+    resultDiv.empty();
     $('#emotion').text("");
     document.getElementsByClassName('loadingText')[0].classList.remove("hidden")
     var r = new FileReader();
