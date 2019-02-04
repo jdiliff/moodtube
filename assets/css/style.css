@@ -11,17 +11,15 @@
 box-sizing: inherit;
 }
 
-
 html {
     width: 100vw;
-    height: 100vh;
+    height: auto;
 }
 body {
     /* background-color: #1fa2ed; */
     color: black;
     height: auto;
     width: 100%;
-    background-image: url("../images/htmlSides.png");
     background-size: 100% 100%;
     background-repeat: repeat;
     -webkit-animation: bgcolor 20s infinite;
@@ -69,12 +67,6 @@ input[type="file"] {
 .hidden {
     display: none;
 }
-
-/* .container {
-    background-image: url("../images/htmlSides.png");
-    background-size: contain;
-    background-repeat: no-repeat;
-} */
 
 .frame {
     background-image: url(../images/newFrame.png);
@@ -206,7 +198,6 @@ video#camStream {
   @media only screen and (max-device-width : 568px) {
     body {
         width: 100%;
-        background-image: url("../images/htmlSides.png");
         background-size: 100% 100%;
         background-repeat: repeat;
         -webkit-animation: bgcolor 20s infinite;
