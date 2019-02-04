@@ -29,7 +29,7 @@ function detectImg() {
         contentType: false,
         success(data) {
             faceConfig.face_token = data.faces[0].face_token;
-            analyzeImg(); //call teh image analyzer function
+            analyzeImg(); //call the image analyzer function
         }
     })
 }
@@ -41,7 +41,7 @@ function getBestEmotion(emotionDict) {
     for (key in emotionDict) {
         value = parseInt(emotionDict[key]);
         console.log(key, value);
-        if (value > bestScore & candidateEmotion.indexOf(key) >= 0 ) {
+        if (value > bestScore) {
             bestEmotion = key;
             bestScore = value;
             console.log("higher");
@@ -179,7 +179,7 @@ takeSnapButton.onclick = video.onclick = function () {
         contentType: false,
         success(data) {
             faceConfig.face_token = data.faces[0].face_token;
-            analyzeImg(); //call teh image analyzer function
+            analyzeImg(); //call the image analyzer function
         }
     })
 }
