@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>Project</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS"
         crossorigin="anonymous">
@@ -24,8 +24,9 @@
 </head>
 
 <body>
+<div class="site-wrapper">
     <div class="logo">
-        <img src="assets/images/mood2.png" alt="logo">
+        <img id="mood-image" src="assets/images/mood2.png" alt="logo">
     </div>
 
     <div class="container">
@@ -34,11 +35,6 @@
             <p class="upload">Upload an image of your face to listen to a playlist that caters to your current mood!</p>
             <a class="btn btn-outline-light" href="#" role="button"> About MoodTube</a> 
     </div>
-    
-    <br>
-    <br>
-    <br>
-
 
 <!-- The Button and Hidden Form for the emotion test -->
     <div class="container text-center">
@@ -58,7 +54,7 @@
             <!-- Hidden canvas element. Used for taking snapshot of video. -->
             <canvas style="display:none;"></canvas>
         </div>
-        <p class="faceLooksLike">Current Mood:<span id="emotion"></span></p>
+        <p class="faceLooksLike">Current Mood: <span id="emotion"></span></p>
         <div class="start-screen hidden loadingText">
 
             <div class="loading">
@@ -84,6 +80,7 @@
                 <div class="loading__element el3">C</div>
                 <div class="loading__element el4">E</div>
             </div>
+
         </div>
     </div>
 
@@ -95,8 +92,9 @@
         <button id="search-btn" type="button" class="btn btn-outline-light">Match My Mood</button>
         <button id="opp-search-btn" type="button" class="btn btn-outline-light">Change My Mood</button>
 
+        <div id="searchResults" class="vid-styling container"></div>
 
-        <iframe class="iframe1 img-responsive" width="800" height="475" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+        <!-- <iframe class="iframe1 img-responsive" width="800" height="475" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen></iframe>
         <iframe class="iframe2" width="800" height="475" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen></iframe>
@@ -113,38 +111,17 @@
         <iframe class="iframe8" width="800" height="475" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
             allowfullscreen></iframe>
 
-        <div class="vid-styling"></div>
-        <!-- </div>
-    <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
-        <ol class="carousel-indicators">
-          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
-          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
-        </ol> -->
-        <!-- <div class="carousel-inner">
-          <div class="carousel-item active">
-            <iframe class="iframe1" width="800" height="400" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>         </div>
-          <div class="carousel-item">
-            <iframe class="iframe2 d-block w-100" width="800" height="400" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>         </div> -->
-        <!-- <div class="carousel-item">
-            <iframe class="iframe4 d-block w-100" width="800" height="400" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>          </div> -->
-        <!-- </div>
-        <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
-          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-          <span class="sr-only">Previous</span>
-        </a>
-        <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
-          <span class="carousel-control-next-icon" aria-hidden="true"></span>
-          <span class="sr-only">Next</span> -->
-        <!-- </a>  
-      </div> -->
+        <div class="vid-styling"></div> -->
+    </div> 
+        </div>
+
 
 
         <script src="assets/javascript/youTubeApi.js"></script>
         <script src="assets/javascript/facepp.js"></script>
+
+        
+    </div>
 </body>
 
 </html>
