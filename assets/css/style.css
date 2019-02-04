@@ -1,3 +1,36 @@
+* {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box;
+    font-family: 'Cinzel Decorative', cursive;
+  
+}
+
+*:before, *:after {
+box-sizing: inherit;
+}
+
+
+html {
+    width: 100vw;
+    height: 100vh;
+}
+body {
+    /* background-color: #1fa2ed; */
+    color: black;
+    height: auto;
+    width: 100%;
+    background-image: url("../images/htmlSides.png");
+    background-size: 100% 100%;
+    background-repeat: repeat;
+    -webkit-animation: bgcolor 20s infinite;
+    animation: bgcolor 10s infinite;
+    -webkit-animation-direction: alternate;
+    animation-direction: alternate;
+}
+
+
 .jumbotron {
     background-image: url("../images/mood2.png");
     background-size: contain;
@@ -10,26 +43,14 @@
     
 }
 
-body {
-    /* background-size: cover; */
-    color: white;
-    height: 100%;
-    width: 100%;
-    background-image: url("../images/htmlSides.png");
-    background-size: cover;
-    background-repeat: no-repeat;
-}
-
-*{
-    font-family: 'Cinzel Decorative', cursive;
-    }
-
 .container {
     text-align: center
 }
 
 .logo {
     text-align: center;
+    height: 300px;
+    width: 100%;
 }
 
 .lead {
@@ -80,7 +101,10 @@ input[type="file"] {
     margin-left: auto;
     margin-right: auto;
 }
- 
+.site-wrapper {
+    overflow-x:hidden
+} 
+
 @keyframes bgcolor {
     0% {
         background-color: #45a3e5
@@ -103,12 +127,6 @@ input[type="file"] {
     }
 }
 
-body {
-    -webkit-animation: bgcolor 20s infinite;
-    animation: bgcolor 10s infinite;
-    -webkit-animation-direction: alternate;
-    animation-direction: alternate;
-}
 /* #getEmotionButton {
     position: relative;
     left:400px;
@@ -134,7 +152,7 @@ body {
 }
 
 #snapApp {
-    max-width: 640px;
+    max-width: 100%;
     min-height: 20vh;
     text-align: center;
 }
@@ -143,3 +161,58 @@ video#camStream {
     width: 100%;
     display: none;
 }
+
+#mood-image {
+    height: 100%;
+    max-width: 100%;
+}
+
+/* @media (min-width: 769px) {
+    body {
+        display: flex;
+        flex-direction: row;
+    }
+  }
+
+@media only screen 
+    and (min-device-width : 641px) 
+    and (max-device-width : 768px) {
+    body {
+        display: flex;
+        flex-direction: row;
+    }
+
+} 
+
+  @media (max-width: 640px) {
+    body {
+        display: flex;
+        flex-direction: column;
+    }
+    .nav-links {
+        justify-content:center;
+    }
+
+    .main-section {
+        margin: 40px;
+    }
+
+    .portfolio {
+        flex-direction: column;
+    }
+
+  } */
+
+  @media only screen and (max-device-width : 568px) {
+    body {
+        width: 100%;
+        background-image: url("../images/htmlSides.png");
+        background-size: 100% 100%;
+        background-repeat: repeat;
+        -webkit-animation: bgcolor 20s infinite;
+        animation: bgcolor 10s infinite;
+        -webkit-animation-direction: alternate;
+        animation-direction: alternate;
+    }
+
+  }

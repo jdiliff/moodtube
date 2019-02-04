@@ -16,7 +16,6 @@ $('#search-btn').on('click', function (e) {
     console.log(moodPlaylist);
 
     getYoutubeTrailer(moodPlaylist);
-    console.log(response.items)
 
 })
 
@@ -24,7 +23,7 @@ $('#search-btn').on('click', function (e) {
 
 //following are for youtube movie trailers
 function getYoutubeTrailer(moodPlaylist) {
-   if (moodPlaylist !== undefined) {
+   if (moodPlaylist !== undefined && moodPlaylist !== "") {
    $.get(`https://www.googleapis.com/youtube/v3/search?maxResults=25&part=snippet&q=${moodPlaylist}song&key=AIzaSyB8LA4BQojhhjwpGFhSFEYQrJHdC1PXiYI`,
    function(response) {
        console.log(response.items)
@@ -32,15 +31,16 @@ function getYoutubeTrailer(moodPlaylist) {
        response.items.forEach(function(cur) {
            idArray.push(cur.id.videoId);
        });
-       function printVids(youtubeArray){
-           console.log('akuna');
-           return youtubeArray.map(function(cur, index) {
-               console.log(index);
-            $(`.iframe${index}`).attr('src', `https://www.youtube.com/embed/${cur}`)
-    
-            $(`.iframe${index}`).attr('class', `card-header`)
-        });
-   }         printVids(idArray);
-});
+       var resultDiv = $("#searchResults");
+       // empty previous search results;
+       resultDiv.empty();
+       // insert new results
+       idArray.slice(0, 8).forEach(function(ytvid) { // youtube video id width="480" height="180"
+            var _iframeTemplate = '<iframe width="550" height="400" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen="false"></iframe>'
+            var iframeTemplate = $($.parseHTML(_iframeTemplate));
+            iframeTemplate.attr('src', `https://www.youtube.com/embed/${ytvid}?fs=0&autohide=0`);
+            resultDiv.append(iframeTemplate);
+       });
+    });
    };
 };
