@@ -4,6 +4,7 @@ let faceConfig = {
 }
 let faceAttributes = {};
 
+// upload img
 function detectImg() {
     var resultDiv = $("#searchResults");
     resultDiv.empty();
@@ -80,7 +81,6 @@ function analyzeImg() {
             $('#age').text(faceAttributes.age);
             $('#emotion').text(faceAttributes.bestEmotion);
 
-
             
         }
 
@@ -135,7 +135,7 @@ startCamButton.onclick = function () {
         video.style.display = 'block';
         // disable start camera button
         startCamButton.disabled = true;
-        // make sure the snapshot img tag is hidden;
+        // make sure the original snapshot is hidden;
         snapshotImg.style.display = "none";
     }
     // handle errors

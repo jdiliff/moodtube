@@ -24,11 +24,12 @@
 </head>
 
 <body>
+<!--Logo  -->
 <div class="site-wrapper">
     <div class="logo">
         <img id="mood-image" src="assets/images/mood2.png" alt="logo">
     </div>
-
+<!-- Description -->
     <div class="container">
             <!-- <h1 class="display-4">MoodTube</h1> -->
             <p class="lead">The Music Your Face Your Wants To Hear.</p>
@@ -49,12 +50,13 @@
         <div id="snapApp" class="frame container">
             
             <video id="camStream" autoplay></video>
-            <!-- <img id="snapshotImg" src=""> -->
+            <!-- Image used for emotion reading"> -->
             <img id="inputImg" src="./assets/images/emotion.gif" , alt="your image">
             <!-- Hidden canvas element. Used for taking snapshot of video. -->
             <canvas style="display:none;"></canvas>
         </div>
         <p class="faceLooksLike">Current Mood: <span id="emotion"></span></p>
+        <!-- loading text animation -->
         <div class="start-screen hidden loadingText">
 
             <div class="loading">
@@ -84,43 +86,17 @@
         </div>
     </div>
 
-
-
     <!-- YOUTUBE API SEARCH -->
     <div class="container">
 
         <button id="search-btn" type="button" class="btn btn-outline-light">Match My Mood</button>
         <button id="opp-search-btn" type="button" class="btn btn-outline-light">Change My Mood</button>
 
-        <div id="searchResults" class="vid-styling container"></div>
-
-        <!-- <iframe class="iframe1 img-responsive" width="800" height="475" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
-        <iframe class="iframe2" width="800" height="475" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
-        <iframe class="iframe3" width="800" height="475" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
-        <iframe class="iframe4" width="800" height="475" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
-        <iframe class="iframe5" width="800" height="475" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
-        <iframe class="iframe6" width="800" height="475" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
-        <iframe class="iframe7" width="800" height="475" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
-        <iframe class="iframe8" width="800" height="475" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-            allowfullscreen></iframe>
-
-        <div class="vid-styling"></div> -->
+        <div id="searchResults" class="vid-styling container"></div>       
     </div> 
-        </div>
-
-
-
+        
         <script src="assets/javascript/youTubeApi.js"></script>
         <script src="assets/javascript/facepp.js"></script>
-
-        
     </div>
 </body>
 
